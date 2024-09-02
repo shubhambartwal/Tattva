@@ -2,17 +2,33 @@ import logo from '../assets/2.png';
 import { HiOutlineMenuAlt4, HiOutlineX } from 'react-icons/hi';
 import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
 import { useState } from 'react';
-import { Link } from 'react-router-dom'; // Import Link for internal navigation
+import { Link, useLocation } from 'react-router-dom'; // Import useLocation for determining the current route
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
+  const location = useLocation();
 
   const handleNav = () => {
     setNav(!nav);
   };
 
+  // Determine if the current page is the Home page
+  const isHomePage = location.pathname === '/';
+
+  const getLinkClass = (path) => {
+    return location.pathname === path
+      ? 'underline decoration-2 underline-offset-4'
+      : '';
+  };
+
   return (
-    <div className="absolute top-0 left-0 w-full h-20 flex justify-between items-center px-6 z-20">
+    <div
+      className={`${
+        isHomePage ? 'absolute' : 'fixed'
+      } top-0 left-0 w-full h-20 flex justify-between items-center px-6 z-20 ${
+        isHomePage ? '' : 'bg-black'
+      }`}
+    >
       {/* Logo Section */}
       <div className="z-30">
         <img
@@ -25,16 +41,29 @@ const Navbar = () => {
       {/* Navigation Links */}
       <ul className="hidden md:flex p-2 text-white font-bold">
         <li className="m-1">
-          <Link to="/projects">Projects</Link>
+          <Link to="/" className={getLinkClass('/')}>
+            Home
+          </Link>
         </li>
         <li className="m-1">
-          <Link to="/services">Services</Link>
+          <Link to="/projects" className={getLinkClass('/projects')}>
+            Projects
+          </Link>
         </li>
         <li className="m-1">
-          <Link to="/about">About</Link>
+          <Link to="/services" className={getLinkClass('/services')}>
+            Services
+          </Link>
         </li>
         <li className="m-1">
-          <Link to="/contact">Contact</Link>
+          <Link to="/about" className={getLinkClass('/about')}>
+            About
+          </Link>
+        </li>
+        <li className="m-1">
+          <Link to="/contact" className={getLinkClass('/contact')}>
+            Contact
+          </Link>
         </li>
       </ul>
 
@@ -63,18 +92,34 @@ const Navbar = () => {
             : 'absolute top-0 left-[-100%] h-screen w-full bg-slate-500 px-4 py-7 flex flex-col z-20 transition-all duration-300'
         }
       >
-        <ul className="text-white font-bold flex flex-col items-center">
+        <ul
+          onClick={handleNav} // Collapse the mobile menu when a link is clicked
+          className="text-white font-bold flex flex-col items-center"
+        >
           <li className="border-b w-full text-center py-2">
-            <Link to="/projects">Projects</Link>
+            <Link to="/" className={getLinkClass('/')}>
+              Home
+            </Link>
           </li>
           <li className="border-b w-full text-center py-2">
-            <Link to="/services">Services</Link>
+            <Link to="/projects" className={getLinkClass('/projects')}>
+              Projects
+            </Link>
           </li>
           <li className="border-b w-full text-center py-2">
-            <Link to="/about">About</Link>
+            <Link to="/services" className={getLinkClass('/services')}>
+              Services
+            </Link>
           </li>
           <li className="border-b w-full text-center py-2">
-            <Link to="/contact">Contact</Link>
+            <Link to="/about" className={getLinkClass('/about')}>
+              About
+            </Link>
+          </li>
+          <li className="border-b w-full text-center py-2">
+            <Link to="/contact" className={getLinkClass('/contact')}>
+              Contact
+            </Link>
           </li>
         </ul>
 
