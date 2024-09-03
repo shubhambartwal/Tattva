@@ -23,11 +23,9 @@ const Navbar = () => {
 
   return (
     <div
-      className={`${
-        isHomePage ? 'absolute' : 'fixed'
-      } top-0 left-0 w-full h-20 flex justify-between items-center px-6 z-20 ${
-        isHomePage ? '' : 'bg-black'
-      }`}
+      className={`${isHomePage ? 'absolute' : 'fixed'
+        } top-0 left-0 w-full h-20 flex justify-between items-center px-6 z-20 ${isHomePage ? '' : 'bg-black'
+        }`}
     >
       {/* Logo Section */}
       <div className="z-30">
@@ -39,35 +37,39 @@ const Navbar = () => {
       </div>
 
       {/* Navigation Links */}
-      <ul className="hidden md:flex p-2 text-white font-bold">
-        <li className="m-1">
+      <ul className="hidden md:flex p-2 text-white font-bold space-x-6">
+        <li>
           <Link to="/" className={getLinkClass('/')}>
             Home
           </Link>
         </li>
-        <li className="m-1">
-          <Link to="/projects" className={getLinkClass('/projects')}>
-            Projects
-          </Link>
-        </li>
-        <li className="m-1">
-          <Link to="/services" className={getLinkClass('/services')}>
-            Services
-          </Link>
-        </li>
-        <li className="m-1">
+        <li>
           <Link to="/about" className={getLinkClass('/about')}>
             About
           </Link>
         </li>
-        <li className="m-1">
-          <Link to="/contact" className={getLinkClass('/contact')}>
-            Contact
+        <li>
+          <Link to="/photography" className={getLinkClass('/photography')}>
+            Photography
+          </Link>
+        </li>
+        <li>
+          <Link to="/films" className={getLinkClass('/films')}>
+            Films
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/contact"
+            className="relative inline-block px-4  rounded-md overflow-hidden bg-[#7d6957] text-white"
+          >
+            <span className="relative z-10">Contact Us</span>
+            <span className="absolute inset-0 border-2 border-white animate-border" />
           </Link>
         </li>
       </ul>
 
-      <div className="hidden md:flex items-center justify-around ">
+      <div className="hidden md:flex items-center justify-around">
         <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
           <FaFacebook className="text-white text-xl m-2" />
         </a>
@@ -81,44 +83,52 @@ const Navbar = () => {
 
       {/* Hamburger Menu */}
       <div onClick={handleNav} className="md:hidden z-30">
-        {nav ? <HiOutlineX size={24} /> : <HiOutlineMenuAlt4 size={24} />}
+        {nav ? (
+          <HiOutlineX size={24} className="text-white" />
+        ) : (
+          <HiOutlineMenuAlt4 size={24} className="text-white" />
+        )}
       </div>
 
       {/* Mobile Menu Dropdown */}
       <div
         className={
           nav
-            ? 'absolute top-0 left-0 w-full h-screen bg-slate-500 px-4 py-7 flex flex-col z-20'
-            : 'absolute top-0 left-[-100%] h-screen w-full bg-slate-500 px-4 py-7 flex flex-col z-20 transition-all duration-300'
+            ? 'fixed top-0 left-0 w-full h-screen bg-black px-4 py-7 flex flex-col z-20'
+            : 'fixed top-0 left-[-100%] h-screen w-full bg-black px-4 py-7 flex flex-col z-20 transition-all duration-300'
         }
       >
         <ul
           onClick={handleNav} // Collapse the mobile menu when a link is clicked
-          className="text-white font-bold flex flex-col items-center"
+          className="text-white font-bold flex flex-col items-center space-y-4"
         >
-          <li className="border-b w-full text-center py-2">
+          <li>
             <Link to="/" className={getLinkClass('/')}>
               Home
             </Link>
           </li>
-          <li className="border-b w-full text-center py-2">
-            <Link to="/projects" className={getLinkClass('/projects')}>
-              Projects
-            </Link>
-          </li>
-          <li className="border-b w-full text-center py-2">
-            <Link to="/services" className={getLinkClass('/services')}>
-              Services
-            </Link>
-          </li>
-          <li className="border-b w-full text-center py-2">
+          <li>
             <Link to="/about" className={getLinkClass('/about')}>
               About
             </Link>
           </li>
-          <li className="border-b w-full text-center py-2">
-            <Link to="/contact" className={getLinkClass('/contact')}>
-              Contact
+          <li>
+            <Link to="/photography" className={getLinkClass('/photography')}>
+              Photography
+            </Link>
+          </li>
+          <li>
+            <Link to="/films" className={getLinkClass('/films')}>
+              Films
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/contact"
+              className="relative inline-block px-4 py-2 rounded-md overflow-hidden bg-[#7d6957] text-white"
+            >
+              <span className="relative z-10">Contact</span>
+              <span className="absolute inset-0 border-2 border-white animate-border" />
             </Link>
           </li>
         </ul>
