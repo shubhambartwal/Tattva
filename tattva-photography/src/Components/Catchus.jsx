@@ -16,7 +16,7 @@ const CatchUs = () => {
                 </div>
                 {/* Right side: Button */}
                 <div className="flex-1 flex items-center justify-center">
-                    <button className="bg-black text-white mb-2 px-6 rounded-lg shadow-lg hover:bg-white hover:text-[#7d6957] transition-colors duration-300">
+                    <button className="bg-black p-1 text-white mb-2 px-6 rounded-lg shadow-lg hover:bg-white hover:text-[#7d6957] transition-colors duration-300">
                         Contact Us
                     </button>
                 </div>

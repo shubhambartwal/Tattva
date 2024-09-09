@@ -49,15 +49,16 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link to="/photography" className={getLinkClass('/photography')}>
-            Photography
-          </Link>
-        </li>
-        <li>
           <Link to="/films" className={getLinkClass('/films')}>
             Films
           </Link>
         </li>
+        <li>
+          <Link to="/photography" className={getLinkClass('/photography')}>
+            Photography
+          </Link>
+        </li>
+        
         <li>
           <Link
             to="/contact"
@@ -69,7 +70,7 @@ const Navbar = () => {
         </li>
       </ul>
 
-      <div className="hidden md:flex items-center justify-around">
+      {/* <div className="hidden md:flex items-center justify-around">
         <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
           <FaFacebook className="text-white text-xl m-2" />
         </a>
@@ -79,7 +80,7 @@ const Navbar = () => {
         <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
           <FaYoutube className="text-white text-xl m-2" />
         </a>
-      </div>
+      </div> */}
 
       {/* Hamburger Menu */}
       <div onClick={handleNav} className="md:hidden z-30">
@@ -113,15 +114,16 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
+            <Link to="/films" className={getLinkClass('/films')}>
+              Films
+            </Link>
+          </li> 
+          <li>
             <Link to="/photography" className={getLinkClass('/photography')}>
               Photography
             </Link>
           </li>
-          <li>
-            <Link to="/films" className={getLinkClass('/films')}>
-              Films
-            </Link>
-          </li>
+         
           <li>
             <Link
               to="/contact"
