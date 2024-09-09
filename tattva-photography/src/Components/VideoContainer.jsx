@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { YOUTUBE_VIDEO_API } from '../Constants/youtube';
+import { MY_CONTENT } from '../Constants/youtube';
 import VideoCard from './VideoCard';
 import { Link } from 'react-router-dom';
 
@@ -9,7 +9,7 @@ const VideoContainer = () => {
 
     const fetchYoutubeVideo = async () => {
         try {
-            const res = await axios.get(YOUTUBE_VIDEO_API);
+            const res = await axios.get(MY_CONTENT);
             console.log(res?.data?.items);
             setVideos(res?.data?.items);
         } catch (error) {
@@ -20,13 +20,12 @@ const VideoContainer = () => {
     useEffect(() => {
         fetchYoutubeVideo();
     }, []);
-
     return (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 p-4">
             {videos.map((item) => (
-                <Link key={item.id} to={`/watch?v=${item.id}`}>
-                    <VideoCard item={item} />
-                </Link>
+                 <Link key={item.id.videoId} to={`/watch?v=${item.id.videoId}`}>
+                    <VideoCard  item={item} />
+                 </Link>
             ))}
         </div>
     );

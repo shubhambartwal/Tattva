@@ -1,4 +1,4 @@
-import logo from '../assets/2.png';
+import logo from '../assets/logo2.png';
 import { HiOutlineMenuAlt4, HiOutlineX } from 'react-icons/hi';
 import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
 import { useState } from 'react';
@@ -32,7 +32,7 @@ const Navbar = () => {
         <img
           src={logo}
           alt="Logo"
-          className="h-12 w-auto max-w-[150px] object-contain"
+          className="h-[40vh] max-w-[150px] object-cover"
         />
       </div>
 
@@ -49,16 +49,15 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link to="/films" className={getLinkClass('/films')}>
-            Films
-          </Link>
-        </li>
-        <li>
           <Link to="/photography" className={getLinkClass('/photography')}>
             Photography
           </Link>
         </li>
-        
+        <li>
+          <Link to="/films" className={getLinkClass('/films')}>
+            Films
+          </Link>
+        </li>
         <li>
           <Link
             to="/contact"
@@ -114,16 +113,15 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link to="/films" className={getLinkClass('/films')}>
-              Films
-            </Link>
-          </li> 
-          <li>
             <Link to="/photography" className={getLinkClass('/photography')}>
               Photography
             </Link>
           </li>
-         
+          <li>
+            <Link to="/films" className={getLinkClass('/films')}>
+              Films
+            </Link>
+          </li>
           <li>
             <Link
               to="/contact"
