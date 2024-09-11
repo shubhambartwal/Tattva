@@ -1,19 +1,19 @@
 import  { useState, useEffect } from 'react'
 import Avatar from "react-avatar";
 import axios from 'axios';
-import { API_KEY } from '../Constants/youtube';
 const VideoCard = ({ item }) => {
     const [channelData, setChannelData] = useState([])
     const getYoutubechannelName = async () => {
         try {
-            const res = await axios.get(`https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${item.snippet.channelId}&key=${API_KEY}`)
+            const res = await axios.get(`https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${item.snippet.channelId}&key=${import.meta.env.VITE_API_KEY}`)
             // console.log(res.data.items[0].snippet)
+          
             setChannelData(res.data.items[0].snippet.thumbnails.high.url)
         } catch (error) {
             console.log(`errror from thumnail,${error}`)
         }
 
-    }
+    }   
     useEffect(() => { getYoutubechannelName() }, [])
     return (
         <div className='w-full cursor-pointer'>

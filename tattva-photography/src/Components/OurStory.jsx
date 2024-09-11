@@ -2,7 +2,7 @@ import React from 'react';
 
 const OurStory = () => {
   return (
-    <section className="bg-black text-white py-16 px-6">
+    <section className="bg-black text-white py-16 px-6 tracking-[.15em]">
       <div className="container mx-auto max-w-6xl">
         <h2 className="text-4xl font-bold mb-12 text-[#7d6957] text-center">Our Story</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

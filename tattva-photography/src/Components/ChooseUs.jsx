@@ -1,8 +1,7 @@
-import React from 'react';
 
 const WhyChooseUs = () => {
   return (
-    <section className="w-full min-h-screen bg-black flex flex-col md:flex-row items-center justify-center overflow-hidden px-4 py-8 md:py-0">
+    <section className="w-full  tracking-[.15em] min-h-screen bg-black flex flex-col md:flex-row items-center justify-center overflow-hidden px-4 py-8 md:py-0">
       {/* Image Side */}
       <div className="flex relative max-w-[80%] max-h-[60%] md:max-w-[30%] md:max-h-[60%] p-4 pb-8 items-center justify-center">
         <img

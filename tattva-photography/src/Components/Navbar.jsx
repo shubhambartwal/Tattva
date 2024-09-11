@@ -59,13 +59,12 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link
-            to="/contact"
-            className="relative inline-block px-4  rounded-md overflow-hidden bg-[#7d6957] text-white"
-          >
-            <span className="relative z-10">Contact Us</span>
-            <span className="absolute inset-0 border-2 border-white animate-border" />
-          </Link>
+        <Link
+  to="/contact"
+  className="relative inline-block px-4 rounded-xl overflow-hidden bg-[#7d6957] text-white hover:bg-[#4c3e34] transition-colors duration-300"
+>
+  <span className="relative z-10">Contact Us</span>
+</Link>
         </li>
       </ul>
 

@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import{ useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import axios from 'axios';
-import { API_KEY } from '../Constants/youtube';
 
 const Watch = () => {
   const [singleVideo, setSingleVideo] = useState({});
@@ -10,7 +9,7 @@ const Watch = () => {
 
   const getSingleVideo = async () => {
     try {
-      const resData = await axios.get(`https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}&key=${API_KEY}`);
+      const resData = await axios.get(`https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}&key=${process.env.REACT_APP_API_KEY}`);
       setSingleVideo(resData?.data.items[0]);
     } catch (error) {
       console.error("Error fetching video data:", error);
