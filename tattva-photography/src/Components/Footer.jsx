@@ -19,13 +19,14 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="mb-4 md:mb-0 text-center md:text-left">
-          © 2024 My Photography Portfolio
+         <h2>©Tattva Photography & Films</h2>
+         <p className='pl-9'>New Delhi, Dehradun</p> 
         </div>
 
         {/* Contact Information */}
         <div className="mb-4 md:mb-0 text-center md:text-left md:pl-4">
-          <p>Email: xxxxxxxxxxxxxxx</p>
-          <p>787878787878</p>
+          <p>tattvaphotography55@gmail.com</p>
+          <p>+91-7088397943</p>
         </div>
       </div>
     </footer>

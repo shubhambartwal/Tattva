@@ -25,20 +25,43 @@ const VideoContainer = () => {
     const filteredVideos = viewType === 'all' ? videos : videos.filter(item => item.snippet.category === viewType);
 
     return (
-        <div className="flex flex-col items-center justify-center p-4">
-            <div className="flex space-x-4 mb-4">
-                {/* Toggle buttons */}
-                <button onClick={() => setViewType('youtube')} className={`bg-[#7d6957] px-4 py-2 text-white rounded hover:bg-[#645349] ${viewType === 'youtube' ? 'bg-opacity-100' : 'bg-opacity-50'}`}>YouTube Videos</button>
-                <button onClick={() => setViewType('freelance')} className={`bg-[#7d6957] px-4 py-2 text-white rounded hover:bg-[#645349] ${viewType === 'freelance' ? 'bg-opacity-100' : 'bg-opacity-50'}`}>Freelance Work</button>
-                <button onClick={() => setViewType('all')} className={`bg-[#7d6957] px-4 py-2 text-white rounded hover:bg-[#645349] ${viewType === 'all' ? 'bg-opacity-100' : 'bg-opacity-50'}`}>All</button>
+        <div className="flex flex-col items-center justify-center p-4 mt-12">
+            <div className="flex space-x-1 mb-4">
+                {/* Toggle buttons with background color only for active button */}
+                <button
+    onClick={() => setViewType('all')}
+    className={`px-2 py-0.5 text-white rounded ${viewType === 'all' ? 'bg-transparent text-[#e9ab75] ' : 'bg-transparent text-[#7d6957]'} hover:text-[#e9ab75] hover:rounded-xl`}
+>
+   <p> All</p>
+</button>
+
+{/* Line between buttons */}
+<span className="border-l-2 border-[#7d6957]  h-6" />
+
+<button
+    onClick={() => setViewType('youtube')}
+    className={`px-2 py-0.5 text-white rounded ${viewType === 'youtube' ? 'bg-transparent text-[#e9ab75] ' : 'bg-transparent text-[#7d6957]'} hover:text-[#e9ab75] hover:rounded-xl`}
+>
+  <p>Tattva</p>  
+</button>
+
+{/* Line between buttons */}
+<span className="border-l-2 border-[#7d6957] h-6" />
+
+<button
+    onClick={() => setViewType('freelance')}
+    className={`px-2 py-0.5 text-white rounded ${viewType === 'freelance' ? 'bg-transparent text-[#e9ab75] ' : 'bg-transparent text-white'}  hover:text-[#e9ab75] hover:rounded-xl`}
+>
+  <p> Freelance Work</p> 
+</button>
+
+             
             </div>
 
-            {/* Line between buttons and content */}
-            <hr className="w-full border-t-2 border-[#7d6957] mb-4" />
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-24"> {/* Increased left and right padding */}
+            {/* Grid of videos */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-2 sm:.5py-0.5x-6 md:px-24">
                 {filteredVideos.map((item) => (
-                    <Link key={item.id.videoId} to={`/watch?v=${item.id.videoId}`}>
+                    <Link key={item.id.videoId} to={`/watch?v=${item.id.videoId}`} className="w-full">
                         <VideoCard item={item} />
                     </Link>
                 ))}
