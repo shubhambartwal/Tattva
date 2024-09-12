@@ -25,6 +25,7 @@ const reviews = [
 
 const ClientReviewSlideshow = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [touchStartX, setTouchStartX] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -42,14 +43,34 @@ const ClientReviewSlideshow = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + reviews.length) % reviews.length);
   };
 
+  const handleTouchStart = (e) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = (e) => {
+    const touchEndX = e.changedTouches[0].clientX;
+    const touchDiff = touchStartX - touchEndX;
+
+    if (touchDiff > 50) {
+      handleNext(); // Swipe left, go to next review
+    } else if (touchDiff < -50) {
+      handlePrev(); // Swipe right, go to previous review
+    }
+  };
+
   return (
-    <section className="w-full min-h-[50vh] bg-black text-white flex items-center justify-center py-8 relative">
+    <section
+      className="w-full min-h-[50vh] bg-black text-white flex items-center justify-center py-8 relative"
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+      style={{ padding: '2rem', boxSizing: 'border-box' }} // Responsive padding
+    >
       <div className="max-w-3xl mx-auto text-center">
         <h2 className="text-4xl font-bold mb-8 text-[#7d6957]">Client Reviews</h2>
         
         <div className="relative">
           <div className="flex flex-col items-center justify-center transition-opacity duration-500">
-            <p className="text-xl md:text-2xl mb-4">"{reviews[currentIndex].review}"</p>
+            <p className="text-xl md:text-2xl mb-4">{reviews[currentIndex].review}</p>
             <p className="text-lg md:text-xl font-bold text-[#7d6957]">- {reviews[currentIndex].name}</p>
           </div>
         </div>
@@ -64,20 +85,6 @@ const ClientReviewSlideshow = () => {
           ))}
         </div>
       </div>
-
-      {/* Navigation Buttons */}
-      <button 
-        onClick={handlePrev} 
-        className="absolute left-4 md:left-8 top-1/2 transform -translate-y-1/2 bg-[#7d6957] text-white h-12 w-12 flex items-center justify-center rounded-full hover:bg-[#645349] transition"
-      >
-        &#10094; {/* Left Arrow Icon */}
-      </button>
-      <button 
-        onClick={handleNext} 
-        className="absolute right-4 md:right-8 top-1/2 transform -translate-y-1/2 bg-[#7d6957] text-white h-12 w-12 flex items-center justify-center rounded-full hover:bg-[#645349] transition"
-      >
-        &#10095; {/* Right Arrow Icon */}
-      </button>
     </section>
   );
 };

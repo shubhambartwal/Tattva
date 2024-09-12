@@ -1,3 +1,4 @@
+import React from 'react';
 import logo from '../assets/logo2.png';
 import { HiOutlineMenuAlt4, HiOutlineX } from 'react-icons/hi';
 import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
@@ -32,7 +33,7 @@ const Navbar = () => {
         <img
           src={logo}
           alt="Logo"
-          className="h-[40vh] max-w-[150px] object-cover"
+          className="h-36 md:h-60 max-w-full object-contain"
         />
       </div>
 
@@ -59,26 +60,14 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-        <Link
-  to="/contact"
-  className="relative inline-block px-4 rounded-xl overflow-hidden bg-[#7d6957] text-white hover:bg-[#4c3e34] transition-colors duration-300"
->
-  <span className="relative z-10">Contact Us</span>
-</Link>
+          <Link
+            to="/contact"
+            className="relative inline-block px-4 rounded-xl overflow-hidden bg-[#7d6957] text-white hover:bg-[#4c3e34] transition-colors duration-300"
+          >
+            <span className="relative z-10">Contact Us</span>
+          </Link>
         </li>
       </ul>
-
-      {/* <div className="hidden md:flex items-center justify-around">
-        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-          <FaFacebook className="text-white text-xl m-2" />
-        </a>
-        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-          <FaInstagram className="text-white text-xl m-2" />
-        </a>
-        <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
-          <FaYoutube className="text-white text-xl m-2" />
-        </a>
-      </div> */}
 
       {/* Hamburger Menu */}
       <div onClick={handleNav} className="md:hidden z-30">
@@ -124,10 +113,9 @@ const Navbar = () => {
           <li>
             <Link
               to="/contact"
-              className="relative inline-block px-4 py-2 rounded-md overflow-hidden bg-[#7d6957] text-white"
+              className="relative inline-block px-4 py-2 rounded-xl overflow-hidden bg-[#7d6957] text-white"
             >
               <span className="relative z-10">Contact</span>
-              <span className="absolute inset-0 border-2 border-white animate-border" />
             </Link>
           </li>
         </ul>

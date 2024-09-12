@@ -1,23 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const videos = [
-  'https://www.youtube.com/embed/VIDEO_ID_1',
-  'https://www.youtube.com/embed/VIDEO_ID_2',
-  'https://www.youtube.com/embed/VIDEO_ID_3',
-  'https://www.youtube.com/embed/VIDEO_ID_4',
-  'https://www.youtube.com/embed/VIDEO_ID_5',
+  'https://www.youtube.com/embed/tjkk9cZ1ZOw',
+  'https://www.youtube.com/embed/ccRcdNt-fFQ',
+  'https://www.youtube.com/embed/vqUUTOSAUJQ',
+  'https://www.youtube.com/embed/gysw4vQX-Nk',
+  'https://www.youtube.com/embed/vqUUTOSAUJQ',
 ];
 
 const VideoSlideshow = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      handleNext();
-    }, 5000); // Change video every 5 seconds
-
-    return () => clearInterval(interval);
-  }, [currentIndex]);
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % videos.length);
