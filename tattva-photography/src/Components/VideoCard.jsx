@@ -1,37 +1,56 @@
-import  { useState, useEffect } from 'react'
-import Avatar from "react-avatar";
+import { useState, useEffect } from 'react';
+import Avatar from 'react-avatar';
 import axios from 'axios';
+
 const VideoCard = ({ item }) => {
-    const [channelData, setChannelData] = useState([])
-    const getYoutubechannelName = async () => {
-        try {
-            const res = await axios.get(`https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${item.snippet.channelId}&key=${import.meta.env.VITE_API_KEY}`)
-            // console.log(res.data.items[0].snippet)
-          
-            setChannelData(res.data.items[0].snippet.thumbnails.high.url)
-        } catch (error) {
-            console.log(`errror from thumnail,${error}`)
-        }
+  const [channelData, setChannelData] = useState([]);
 
-    }   
-    useEffect(() => { getYoutubechannelName() }, [])
-    return (
-        <div className='w-full cursor-pointer'>
-            <img className=" w-full " src={item.snippet.thumbnails.medium.url} alt='https://imgs.search.brave.com/pOaBQnGdotrnHtF_0NMASNCS6LazIYQ19AmbcrWTQmE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/dGVjaHNtaXRoLmNv/bS9ibG9nL3dwLWNv/bnRlbnQvdXBsb2Fk/cy8yMDIxLzAyL1RT/Qy10aHVtYm5haWwt/ZXhhbXBsZS0xMDI0/eDU3Ni5wbmc' />
-            <div>
-                <div className='flex mt-2 '>
-                        <div className=' w-[15%] justify-center align-middle '>
-                            <Avatar className='pl-0 left-0 m-2' src={channelData} size={'34px'}  round={true} />
-                        </div>
-                    <div className='ml-2 '>
-                        <h1 className='flex font-bold text-white'>{item.snippet.title} </h1>
-                        <p className='flex text-small text-white'>{item.snippet.channelTitle}</p>
-                    </div>
+  const getYoutubeChannelName = async () => {
+    try {
+      const res = await axios.get(
+        `https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${item.snippet.channelId}&key=${import.meta.env.VITE_API_KEY}`
+      );
+      setChannelData(res.data.items[0].snippet.thumbnails.high.url);
+    } catch (error) {
+      console.log(`Error fetching thumbnail: ${error}`);
+    }
+  };
 
-                </div>
-            </div>
+  useEffect(() => {
+    getYoutubeChannelName();
+  }, []);
+
+  return (
+    <div className="w-full cursor-pointer p-2">
+      {/* Video Thumbnail */}
+      <img
+        className="w-full rounded-lg"
+        src={item.snippet.thumbnails.medium.url}
+        alt="Video Thumbnail"
+      />
+      <div className="mt-2 flex items-center">
+        {/* Channel Avatar */}
+        <div className="flex-shrink-0">
+          <Avatar
+            className="mr-2"
+            src={channelData}
+            size="40px"
+            round={true}
+          />
         </div>
-    )
-}
 
-export default VideoCard
+        {/* Video Title and Channel Name */}
+        <div className="flex-1">
+          <h1 className="font-bold text-sm text-white leading-tight sm:text-base">
+            {item.snippet.title}
+          </h1>
+          <p className="text-xs text-gray-400 sm:text-sm">
+            {item.snippet.channelTitle}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default VideoCard;
