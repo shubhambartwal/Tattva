@@ -7,8 +7,7 @@ const Films = () => {
       <VideoSlideshow />
       
       {/* Line in between the components */}
-      <hr className="border-t-2 border-[#7d6957] my-8 mx-auto w-4/5" />
-
+      <hr className="border-t-2 border-[#eab07d] my-8 mx-auto w-4/5" />
       <VideoContainer />
     </div>
   );

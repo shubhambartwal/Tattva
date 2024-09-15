@@ -1,3 +1,5 @@
+import faq from '../assets/faq.jpg'
+import Collage from '../Components/Collage'
 const Contact = () => {
   return (
     <div className="flex-grow min-h-screen pt-20 bg-black">
@@ -31,6 +33,7 @@ const Contact = () => {
           </button>
         </form>
       </div>
+      <Collage collage={faq}/>
     </div>
   );
 };

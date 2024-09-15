@@ -7,13 +7,16 @@ import HomeVideo from '../Components/HomeVideo'
 import OurStory from '../Components/OurStory'
 import PhotographyShowcase from '../Components/PhotographyShowcase'
 import ClientReviewSlideshow from '../Components/Review'
+import collage from '../assets/collage.jpg';
+import aside from '../assets/aside.jpg'
 const Home = () => {
   return (
     <div><HomeVideo/>
     <OurStory/>
+    <Collage collage={aside}/>
     <PhotographyShowcase/>
     <CatchUs/>
-    <Collage/>
+    <Collage collage={collage}/>
     <ChooseUs/>
     <DiscoverMore/>
     <ClientReviewSlideshow/>

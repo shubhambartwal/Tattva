@@ -1,9 +1,9 @@
 const PhotographyShowcase = () => {
   return (
-    <section className="bg-black min-h-screen py-4">
+    <section className="bg-white min-h-screen py-4 mt-20"> {/* Add mt-20 to create space below the fixed navbar */}
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-4 text-[#7d6957]">Our Photography Work</h2>
-        <p className="text-center text-white mb-8 max-w-2xl mx-auto">
+        <p className="text-center text-black mb-8 max-w-2xl mx-auto">
           We capture the essence of every moment, from weddings to commercial ads and high fashion. Our work speaks for itself, reflecting our passion and dedication to photography.
         </p>
 

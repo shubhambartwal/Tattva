@@ -7,6 +7,7 @@ import Footer from './Components/Footer'
 import Photography from './Pages/Photography';
 import Films from './Pages/Films';
 import Watch from './Components/Watch';
+import Gallery from './Components/Gallery'
 const App = () => {
   return (
     <Router>
@@ -19,7 +20,7 @@ const App = () => {
             <Route path="/photography" element={<Photography />} />
             <Route path="/films" element={<Films />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path='/watch' element={<Watch/>} />
+            <Route path='/watch' element={<Gallery/>} />
           </Routes>
         </main>
         <Footer/>

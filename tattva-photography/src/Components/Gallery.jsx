@@ -1,62 +1,71 @@
-import React, { useState } from 'react';
+import { useState } from 'react'
+import { X } from 'lucide-react'
 
-// Sample portrait image URLs
-const images = [
-  'https://picsum.photos/600/800?random=1',
-  'https://picsum.photos/600/800?random=2',
-  'https://picsum.photos/600/800?random=3',
-  'https://picsum.photos/600/800?random=4',
-  'https://picsum.photos/600/800?random=5',
-  'https://picsum.photos/600/800?random=6'
-];
+const GalleryImage = ({ src, alt, onClick }) => (
+  <div 
+    className="relative aspect-[3/4] overflow-hidden rounded-lg cursor-pointer group"
+    onClick={onClick}
+  >
+    <img
+      src={src}
+      alt={alt}
+      className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+    />
+    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity duration-300" />
+  </div>
+)
 
-const Gallery = () => {
-  const [selectedImage, setSelectedImage] = useState(null);
+const FullScreenImage = ({ src, alt, onClose }) => (
+  <div className="fixed inset-0 bg-black z-50 flex items-center justify-center">
+    <button
+      onClick={onClose}
+      className="absolute top-4 right-4 text-white bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-75 transition-colors duration-200"
+      aria-label="Close full screen view"
+    >
+      <X size={24} />
+    </button>
+    <img src={src} alt={alt} className="max-w-full max-h-full object-contain" />
+  </div>
+)
 
-  const openImage = (image) => {
-    setSelectedImage(image);
-  };
+export default function GalleryPage() {
+  const [selectedImage, setSelectedImage] = useState(null)
 
-  const closeImage = () => {
-    setSelectedImage(null);
-  };
+  const images = [
+    { src: "/placeholder.svg?height=1200&width=900", alt: "Gallery Image 1" },
+    { src: "/placeholder.svg?height=1200&width=900", alt: "Gallery Image 2" },
+    { src: "/placeholder.svg?height=1200&width=900", alt: "Gallery Image 3" },
+    { src: "/placeholder.svg?height=1200&width=900", alt: "Gallery Image 4" },
+    { src: "/placeholder.svg?height=1200&width=900", alt: "Gallery Image 5" },
+    { src: "/placeholder.svg?height=1200&width=900", alt: "Gallery Image 6" },
+    { src: "/placeholder.svg?height=1200&width=900", alt: "Gallery Image 7" },
+    { src: "/placeholder.svg?height=1200&width=900", alt: "Gallery Image 8" },
+    { src: "/placeholder.svg?height=1200&width=900", alt: "Gallery Image 9" },
+    { src: "/placeholder.svg?height=1200&width=900", alt: "Gallery Image 10" },
+    { src: "/placeholder.svg?height=1200&width=900", alt: "Gallery Image 11" },
+    { src: "/placeholder.svg?height=1200&width=900", alt: "Gallery Image 12" },
+  ]
 
   return (
-    <div className="relative">
-      {/* Image Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4">
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold mb-8 text-center">Photo Gallery</h1>
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
         {images.map((image, index) => (
-          <div key={index} className="cursor-pointer">
-            <img
-              src={image}
-              alt={`Gallery Item ${index + 1}`}
-              className="w-full h-80 object-cover rounded-lg"
-              onClick={() => openImage(image)}
-            />
-          </div>
+          <GalleryImage
+            key={index}
+            src={image.src}
+            alt={image.alt}
+            onClick={() => setSelectedImage(image)}
+          />
         ))}
       </div>
-
-      {/* Full-Screen Image Viewer */}
       {selectedImage && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50 overflow-auto">
-          <div className="relative max-w-full max-h-screen">
-            <img
-              src={selectedImage}
-              alt="Selected"
-              className="max-w-full max-h-screen object-contain"
-            />
-            <button
-              onClick={closeImage}
-              className="absolute top-4 right-4 text-white text-3xl font-bold hover:text-gray-400"
-            >
-              &times;
-            </button>
-          </div>
-        </div>
+        <FullScreenImage
+          src={selectedImage.src}
+          alt={selectedImage.alt}
+          onClose={() => setSelectedImage(null)}
+        />
       )}
     </div>
-  );
-};
-
-export default Gallery;
+  )
+}

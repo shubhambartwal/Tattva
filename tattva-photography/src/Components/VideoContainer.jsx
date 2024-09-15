@@ -1,73 +1,68 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
 import VideoCard from './VideoCard';
-import { Link } from 'react-router-dom';
+import { ytvideos, freelance } from '../constants/ytvideos';
 
 const VideoContainer = () => {
-    const [videos, setVideos] = useState([]);
-    const [viewType, setViewType] = useState('all'); // Toggle state for view type
-    const apiUrl = `${import.meta.env.VITE_BASE_URL}/search?key=${import.meta.env.VITE_API_KEY}&channelId=${import.meta.env.VITE_CHANNEL_ID}&part=snippet,id&order=date&maxResults=10`;
+  const [videos, setVideos] = useState([]);
+  const [activeButton, setActiveButton] = useState('All');
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
-    const fetchYoutubeVideo = async () => {
-        try {
-            const res = await axios.get(apiUrl);
-            setVideos(res?.data?.items);
-        } catch (error) {
-            console.log(error);
-        }
-    };
+  const handleButtonClick = (viewType) => {
+    setActiveButton(viewType);
+    setIsTransitioning(true);
+    setTimeout(() => {
+      if (viewType === 'All') {
+        setVideos([...ytvideos, ...freelance]);
+      } else if (viewType === 'Tattva Films') {
+        setVideos(ytvideos);
+      } else if (viewType === 'Freelance Projects') {
+        setVideos(freelance);
+      }
+      setIsTransitioning(false);
+    }, 300);
+  };
 
-    useEffect(() => {
-        fetchYoutubeVideo();
-    }, []);
+  useEffect(() => {
+    handleButtonClick('All');
+  }, []);
 
-    // Filter videos based on viewType
-    const filteredVideos = viewType === 'all' ? videos : videos.filter(item => item.snippet.category === viewType);
+  return (
+    <div className="flex flex-col items-center justify-center px-4 mt-12">
+      <div className="flex space-x-0 text-white mb-6 pb-3">
+        <button
+          onClick={() => handleButtonClick('All')}
+          className={`px-1 py-0 ${activeButton === 'All' ? 'text-[#7d6957]' : 'text-white'} hover:text-[#7d6957] transition-all duration-300`}
+        >
+          All
+        </button>
+        <span className="border-r border-[#7d6957]"></span>
+        <button
+          onClick={() => handleButtonClick('Tattva Films')}
+          className={`px-1 py-0 ${activeButton === 'Tattva Films' ? 'text-[#7d6957]' : 'text-white'} hover:text-[#7d6957] transition-all duration-300`}
+        >
+          Tattva Films
+        </button>
+        <span className="border-r border-[#7d6957]"></span>
+        <button
+          onClick={() => handleButtonClick('Freelance Projects')}
+          className={`px-1 py-0 ${activeButton === 'Freelance Projects' ? 'text-[#7d6957]' : 'text-white'} hover:text-[#7d6957] transition-all duration-300`}
+        >
+          Freelance Projects
+        </button>
+      </div>
 
-    return (
-        <div className="flex flex-col items-center justify-center p-4 mt-12">
-            <div className="flex space-x-1 mb-4">
-                {/* Toggle buttons with background color only for active button */}
-                <button
-    onClick={() => setViewType('all')}
-    className={`px-2 py-0.5 text-white rounded ${viewType === 'all' ? 'bg-transparent text-[#e9ab75] ' : 'bg-transparent text-[#7d6957]'} hover:text-[#e9ab75] hover:rounded-xl`}
+      {/* Slide in/out transition */}
+      <div
+  className={`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-2 sm:px-6 md:px-24 transition-transform transition-opacity duration-300 ease-in-out ${isTransitioning ? 'opacity-0 translate-y-5' : 'opacity-100 translate-y-0'}`}
 >
-   <p> All</p>
-</button>
+  {videos.map((item, index) => (
+    <VideoCard key={index} item={item} />
+  ))}
+</div>
 
-{/* Line between buttons */}
-<span className="border-l-2 border-[#7d6957]  h-6" />
 
-<button
-    onClick={() => setViewType('youtube')}
-    className={`px-2 py-0.5 text-white rounded ${viewType === 'youtube' ? 'bg-transparent text-[#e9ab75] ' : 'bg-transparent text-[#7d6957]'} hover:text-[#e9ab75] hover:rounded-xl`}
->
-  <p>Tattva</p>  
-</button>
-
-{/* Line between buttons */}
-<span className="border-l-2 border-[#7d6957] h-6" />
-
-<button
-    onClick={() => setViewType('freelance')}
-    className={`px-2 py-0.5 text-white rounded ${viewType === 'freelance' ? 'bg-transparent text-[#e9ab75] ' : 'bg-transparent text-white'}  hover:text-[#e9ab75] hover:rounded-xl`}
->
-  <p> Freelance Work</p> 
-</button>
-
-             
-            </div>
-
-            {/* Grid of videos */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-2 sm:.5py-0.5x-6 md:px-24">
-                {filteredVideos.map((item) => (
-                    <Link key={item.id.videoId} to={`/watch?v=${item.id.videoId}`} className="w-full">
-                        <VideoCard item={item} />
-                    </Link>
-                ))}
-            </div>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default VideoContainer;
