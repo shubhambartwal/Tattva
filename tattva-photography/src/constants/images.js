@@ -1,0 +1,93 @@
+const images = [
+    {
+        id: 1,
+        pics: [{ src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 1" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 2" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 3" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 4" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 5" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 6" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 7" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 8" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 9" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 10" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 11" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 12" }]
+    },
+    {
+        id: 2,
+        pics: [{ src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 1" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 2" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 3" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 4" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 5" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 6" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 7" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 8" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 9" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 10" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 11" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 12" }]
+    }
+    , {
+        id: 3,
+        pics: [{ src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 1" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 2" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 3" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 4" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 5" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 6" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 7" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 8" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 9" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 10" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 11" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 12" }]
+    },
+    {
+        id: 4,
+        pics: [{ src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 1" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 2" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 3" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 4" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 5" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 6" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 7" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 8" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 9" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 10" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 11" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 12" }]
+    },
+    {
+        id: 5,
+        pics: [{ src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 1" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 2" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 3" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 4" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 5" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 6" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 7" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 8" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 9" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 10" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 11" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 12" }]
+    },
+    {
+        id: 6,
+        pics: [{ src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 1" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 2" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 3" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 4" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 5" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 6" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 7" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 8" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 9" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 10" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 11" },
+        { src: `https://picsum.photos/1200/900?random=${Math.random()}`, alt: "Gallery Image 12" }]
+    }
+]
+export { images }

@@ -3,11 +3,11 @@ import PhotoSlideshow from '../Components/PhotoSlideShow';
 import PhotoCardHolder from '../Components/PhotoCardHolder';
 const Photography = () => {
   return (
-    <div className="flex-grow pt-20 bg-black">
-      <div className="container mx-auto p-8">
-        <h2 className="text-3xl font-bold text-center mb-4 text-[#7d6957]">My Projects</h2>
-        <PhotoSlideshow/>
-      <PhotoCardHolder/>
+    <div className="flex-grow  bg-black">
+      <div className="container ">
+        <PhotoSlideshow />
+        <div > <h1 className='text-[#da9b64] text-center text-4xl font-bold py-2'>Our Cients</h1></div>
+        <PhotoCardHolder />
       </div>
     </div>
   );

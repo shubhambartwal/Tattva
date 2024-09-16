@@ -31,21 +31,21 @@ const VideoContainer = () => {
       <div className="flex space-x-0 text-white mb-6 pb-3">
         <button
           onClick={() => handleButtonClick('All')}
-          className={`px-1 py-0 ${activeButton === 'All' ? 'text-[#7d6957]' : 'text-white'} hover:text-[#7d6957] transition-all duration-300`}
+          className={`px-1 py-0 ${activeButton === 'All' ? 'text-[#dda370]' : 'text-white'} hover:text-[#7d6957] transition-all duration-300`}
         >
           All
         </button>
         <span className="border-r border-[#7d6957]"></span>
         <button
           onClick={() => handleButtonClick('Tattva Films')}
-          className={`px-1 py-0 ${activeButton === 'Tattva Films' ? 'text-[#7d6957]' : 'text-white'} hover:text-[#7d6957] transition-all duration-300`}
+          className={`px-1 py-0 ${activeButton === 'Tattva Films' ? 'text-[#dda370]' : 'text-white'} hover:text-[#7d6957] transition-all duration-300`}
         >
           Tattva Films
         </button>
         <span className="border-r border-[#7d6957]"></span>
         <button
           onClick={() => handleButtonClick('Freelance Projects')}
-          className={`px-1 py-0 ${activeButton === 'Freelance Projects' ? 'text-[#7d6957]' : 'text-white'} hover:text-[#7d6957] transition-all duration-300`}
+          className={`px-1 py-0 ${activeButton === 'Freelance Projects' ? 'text-[#dda370]' : 'text-white'} hover:text-[#7d6957] transition-all duration-300`}
         >
           Freelance Projects
         </button>

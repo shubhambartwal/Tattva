@@ -1,20 +1,25 @@
-import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import logo from '../assets/logo2.png';
 import { HiOutlineMenuAlt4, HiOutlineX } from 'react-icons/hi';
 import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
 import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom'; // Import useLocation for determining the current route
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate(); // Move useNavigate outside the function
+  
+  const handleHome = () => {
+    navigate('/'); // Navigate to home page
+  };
 
   const handleNav = () => {
     setNav(!nav);
   };
 
-  // Determine if the current page is the Home page
-  const isHomePage = location.pathname === '/';
+  // Determine if the current page is Home or Photography page
+  const isTransparent = location.pathname === '/' || location.pathname === '/photography';
 
   const getLinkClass = (path) => {
     return location.pathname === path
@@ -24,15 +29,15 @@ const Navbar = () => {
 
   return (
     <div
-      className={`${isHomePage ? 'absolute' : 'fixed'
-        } top-0 left-0 w-full h-20 flex justify-between items-center px-6 z-20 ${isHomePage ? '' : 'bg-black'
+      className={`${isTransparent ? 'absolute' : 'fixed'
+        } top-0 left-0 w-full h-20 flex justify-between items-center px-6 z-20 ${isTransparent ? '' : 'bg-black'
         }`}
     >
       {/* Logo Section */}
-      <div className="z-30">
+      <div className="z-30 cursor-pointer" >
         <img
           src={logo}
-          alt="Logo"
+          alt="Logo" onClick={handleHome}
           className="h-36 md:h-60 max-w-full object-contain"
         />
       </div>
@@ -82,12 +87,12 @@ const Navbar = () => {
       <div
         className={
           nav
-            ? 'fixed top-0 left-0 w-full h-screen bg-black px-4 py-7 flex flex-col z-20'
-            : 'fixed top-0 left-[-100%] h-screen w-full bg-black px-4 py-7 flex flex-col z-20 transition-all duration-300'
+            ? 'fixed top-0 left-0 w-full h-screen bg-black px-4 py-7 flex flex-col z-20 transition-all duration-300 ease-in-out'
+            : 'fixed top-0 left-[-100%] h-screen w-full bg-black px-4 py-7 flex flex-col z-20 transition-all duration-300 ease-in-out'
         }
       >
         <ul
-          onClick={handleNav} // Collapse the mobile menu when a link is clicked
+          onClick={handleNav}
           className="text-white font-bold flex flex-col items-center space-y-4"
         >
           <li>
