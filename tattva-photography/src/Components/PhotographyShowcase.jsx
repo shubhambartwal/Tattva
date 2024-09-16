@@ -10,7 +10,7 @@ const PhotographyShowcase = () => {
         <div className="flex flex-col mx-[15%] md:flex-row md:justify-between md:space-x-4">
           {/* Wedding Photography */}
           <div className="flex flex-col items-center flex-shrink-0 md:w-1/3 mb-4 md:mb-0">
-            <h3 className="text-xl font-semibold text-white mb-2 text-center">Wedding Photography</h3>
+            <h3 className="text-xl font-semibold text-black mb-2 text-center">Wedding Photography</h3>
             <div className="group">
               <img
                 src="https://via.placeholder.com/300x450.png?text=Wedding+Photography"
@@ -21,7 +21,7 @@ const PhotographyShowcase = () => {
           </div>
           {/* Commercial Ad Photography */}
           <div className="flex flex-col items-center flex-shrink-0 md:w-1/3 mb-4 md:mb-0">
-            <h3 className="text-xl font-semibold text-white mb-2 text-center">Commercial Photography</h3>
+            <h3 className="text-xl font-semibold text-black mb-2 text-center">Commercial Photography</h3>
             <div className="group">
               <img
                 src="https://via.placeholder.com/300x450.png?text=Commercial+Ad+Photography"
@@ -32,7 +32,7 @@ const PhotographyShowcase = () => {
           </div>
           {/* Fashion Photography */}
           <div className="flex flex-col items-center flex-shrink-0 md:w-1/3 mb-4 md:mb-0">
-            <h3 className="text-xl font-semibold text-white mb-2 text-center">Fashion Photography</h3>
+            <h3 className="text-xl font-semibold text-black mb-2 text-center">Fashion Photography</h3>
             <div className="group">
               <img
                 src="https://via.placeholder.com/300x450.png?text=Fashion+Photography"
