@@ -5,7 +5,7 @@ const WhyChooseUs = () => {
       {/* Image Side */}
       <div className="flex relative max-w-[80%] max-h-[60%] md:max-w-[30%] md:max-h-[60%] p-4 pb-8 items-center justify-center">
         <img
-          src="https://via.placeholder.com/600x800"
+          src={`https://picsum.photos/600/800?random=${Math.random()}`}
           alt="Photography and Video Services"
           className="w-[100%] md:w-[70%] rounded-lg transform transition-transform duration-500 hover:scale-105"
         />

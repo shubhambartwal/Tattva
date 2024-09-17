@@ -13,7 +13,7 @@ const PhotographyShowcase = () => {
             <h3 className="text-xl font-semibold text-black mb-2 text-center">Wedding Photography</h3>
             <div className="group">
               <img
-                src="https://via.placeholder.com/300x450.png?text=Wedding+Photography"
+                src={`https://picsum.photos/300/450?random=${Math.random()}`}
                 alt="Wedding Photography"
                 className="w-full object-cover rounded-lg transition-transform duration-300 ease-in-out group-hover:scale-105 mx-auto"
               />
@@ -24,7 +24,7 @@ const PhotographyShowcase = () => {
             <h3 className="text-xl font-semibold text-black mb-2 text-center">Commercial Photography</h3>
             <div className="group">
               <img
-                src="https://via.placeholder.com/300x450.png?text=Commercial+Ad+Photography"
+                src={`https://picsum.photos/300/450?random=${Math.random()}`}
                 alt="Commercial Ad Photography"
                 className="w-full object-cover rounded-lg transition-transform duration-300 ease-in-out group-hover:scale-105 mx-auto"
               />
@@ -35,7 +35,7 @@ const PhotographyShowcase = () => {
             <h3 className="text-xl font-semibold text-black mb-2 text-center">Fashion Photography</h3>
             <div className="group">
               <img
-                src="https://via.placeholder.com/300x450.png?text=Fashion+Photography"
+                src={`https://picsum.photos/300/450?random=${Math.random()}`}
                 alt="Fashion Photography"
                 className="w-full object-cover rounded-lg transition-transform duration-300 ease-in-out group-hover:scale-105 mx-auto"
               />

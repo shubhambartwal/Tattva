@@ -1,12 +1,12 @@
 import PhotoCard from './PhotoCard';
 import { Link } from 'react-router-dom';
 const photos = [
-  { src: 'https://via.placeholder.com/300x500', title: 'Image 1', id: 1 },
-  { src: 'https://via.placeholder.com/300x500', title: 'Image 2', id: 2 },
-  { src: 'https://via.placeholder.com/300x500', title: 'Image 3', id: 3 },
-  { src: 'https://via.placeholder.com/300x500', title: 'Image 4', id: 4 },
-  { src: 'https://via.placeholder.com/300x500', title: 'Image 5', id: 5 },
-  { src: 'https://via.placeholder.com/300x500', title: 'Image 6', id: 6 },
+  { src: `https://picsum.photos/300/500?random=${Math.random()}`, title: 'Image 1', id: 1 },
+  { src: `https://picsum.photos/300/500?random=${Math.random()}`, title: 'Image 2', id: 2 },
+  { src: `https://picsum.photos/300/500?random=${Math.random()}`, title: 'Image 3', id: 3 },
+  { src: `https://picsum.photos/300/500?random=${Math.random()}`, title: 'Image 4', id: 4 },
+  { src: `https://picsum.photos/300/500?random=${Math.random()}`, title: 'Image 5', id: 5 },
+  { src: `https://picsum.photos/300/500?random=${Math.random()}`, title: 'Image 6', id: 6 },
 ];
 
 const PhotoCardHolder = () => {
