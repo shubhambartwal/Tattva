@@ -2,9 +2,9 @@ import pic from '../assets/pic.jpg'
 const PhotoSlideshow = () => {
 
   return (
-    <section className=" w-[100vw] h-[60vh] ">
+    <section className=" ">
       {/* Image */}
-      <div className="relative w-full h-full ">
+      <div className="relative w-full h-[70vh] ">
         <img
           src={pic}
           alt='...'

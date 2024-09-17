@@ -1,6 +1,6 @@
 const PhotoCard = ({ src, title }) => {
   return (
-      <div className="group overflow-hidden h-full w-full rounded-3xl shadow-md border-none  shadow-[#ecc39e]">
+      <div className="group overflow-hidden h-full w-full rounded-3xl shadow-md shadow-[#ecc39e]">
         <div className="relative h-full w-full aspect-[9/16] rounded-3xl overflow-hidden">
           <img
             src={src}
