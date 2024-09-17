@@ -1,4 +1,5 @@
 import faq from '../assets/faq.jpg'
+import DiscoverMore from '../Components/DiscoverMore';
 import Collage from '../Components/Collage'
 const Contact = () => {
   return (
@@ -34,6 +35,7 @@ const Contact = () => {
         </form>
       </div>
       <Collage collage={faq}/>
+      <DiscoverMore />
     </div>
   );
 };

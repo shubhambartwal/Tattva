@@ -19,17 +19,17 @@ const Navbar = () => {
   };
 
   // Determine if the current page is Home or Photography page
-  const isTransparent = location.pathname === '/' || location.pathname === '/photography';
+  const isTransparent = location.pathname === '/' || location.pathname === '/photography' ||  location.pathname === '/about';
 
   const getLinkClass = (path) => {
     return location.pathname === path
-      ? 'underline decoration-2 underline-offset-4'
+      ? 'text-[#7d6957] decoration-2 underline-offset-4'
       : '';
   };
 
   return (
     <div
-      className={`${isTransparent ? 'absolute' : 'fixed'
+      className={`font-custom  ${isTransparent ? 'absolute' : 'fixed'
         } top-0 left-0 w-full h-20 flex justify-between items-center px-6 z-20 ${isTransparent ? '' : 'bg-black'
         }`}
     >
@@ -43,33 +43,33 @@ const Navbar = () => {
       </div>
 
       {/* Navigation Links */}
-      <ul className="hidden md:flex p-2 text-white font-bold space-x-6">
-        <li>
+      <ul className="hidden md:flex p-2 text-white text-[12px]  space-x-6">
+        <li className='hover:text-[#7d6957]'>
           <Link to="/" className={getLinkClass('/')}>
-            Home
+            HOME
           </Link>
         </li>
-        <li>
+        <li className='hover:text-[#7d6957]'>
           <Link to="/about" className={getLinkClass('/about')}>
-            About
+            ABOUT
           </Link>
         </li>
-        <li>
+        <li className='hover:text-[#7d6957]'>
           <Link to="/photography" className={getLinkClass('/photography')}>
-            Photography
+            PHOTOGRAPHY
           </Link>
         </li>
-        <li>
+        <li className='hover:text-[#7d6957]'>
           <Link to="/films" className={getLinkClass('/films')}>
-            Films
+            FILMS
           </Link>
         </li>
-        <li>
+        <li className='hover:text-[#7d6957]'>
           <Link
             to="/contact"
-            className="relative inline-block px-4 rounded-xl overflow-hidden bg-[#7d6957] text-white hover:bg-[#4c3e34] transition-colors duration-300"
+            className="relative inline-block px-4 rounded-xl border border-[#F8F4ED] border-1 overflow-hidden  text-[#F8F4ED]  transition-colors duration-300"
           >
-            <span className="relative z-10">Contact Us</span>
+            <span className="relative z-10">CONTACT US</span>
           </Link>
         </li>
       </ul>
@@ -93,26 +93,26 @@ const Navbar = () => {
       >
         <ul
           onClick={handleNav}
-          className="text-white font-bold flex flex-col items-center space-y-4"
+          className="text-white  flex flex-col items-center space-y-4"
         >
           <li>
             <Link to="/" className={getLinkClass('/')}>
-              Home
+              HOME
             </Link>
           </li>
           <li>
             <Link to="/about" className={getLinkClass('/about')}>
-              About
+              ABOUT
             </Link>
           </li>
           <li>
             <Link to="/photography" className={getLinkClass('/photography')}>
-              Photography
+              PHOTOGRAPHY
             </Link>
           </li>
           <li>
             <Link to="/films" className={getLinkClass('/films')}>
-              Films
+              FILMS
             </Link>
           </li>
           <li>
@@ -120,7 +120,7 @@ const Navbar = () => {
               to="/contact"
               className="relative inline-block px-4 py-2 rounded-xl overflow-hidden bg-[#7d6957] text-white"
             >
-              <span className="relative z-10">Contact</span>
+              <span className="relative z-10">CONTACT US</span>
             </Link>
           </li>
         </ul>

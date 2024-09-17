@@ -60,7 +60,7 @@ const ClientReviewSlideshow = () => {
 
   return (
     <section
-      className="w-full min-h-[50vh] bg-black text-white flex items-center justify-center py-8 relative"
+      className="w-full  bg-black text-white flex items-center justify-center mb-16 relative"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
       style={{ padding: '2rem', boxSizing: 'border-box' }} // Responsive padding
@@ -76,7 +76,7 @@ const ClientReviewSlideshow = () => {
         </div>
 
         {/* Dots for slide indication */}
-        <div className="flex justify-center mt-8 space-x-2">
+        <div className="flex justify-center mt-2 space-x-2">
           {reviews.map((_, index) => (
             <span
               key={index}

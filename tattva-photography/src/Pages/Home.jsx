@@ -8,18 +8,24 @@ import OurStory from '../Components/OurStory'
 import PhotographyShowcase from '../Components/PhotographyShowcase'
 import ClientReviewSlideshow from '../Components/Review'
 import collage from '../assets/collage.jpg';
-import aside from '../assets/aside.jpg'
+import Coffee from '../Components/Coffee'
 const Home = () => {
   return (
-    <div><HomeVideo/>
-    <OurStory/>
-    <Collage collage={aside}/>
-    <PhotographyShowcase/>
-    <CatchUs/>
-    <Collage collage={collage}/>
-    <ChooseUs/>
-    <DiscoverMore/>
-    <ClientReviewSlideshow/>
+    <div className='bg-black'><HomeVideo />
+      <OurStory />
+      <hr className="border-t-2 border-[#eab07d] my-8 mx-auto w-4/5" />
+      <PhotographyShowcase />
+      <Coffee />
+      <ChooseUs />
+      <hr className="border-t-2 border-[#eab07d] my-8 mx-auto w-4/5" />
+      <Collage collage={collage} />
+      <hr className="border-t-2 border-[#eab07d] mt-8 mx-auto w-4/5" />
+      {/* <CatchUs /> */}
+
+      
+     
+      <ClientReviewSlideshow />
+      <DiscoverMore />
     </div>
   )
 }

@@ -4,7 +4,7 @@ const PhotoSlideshow = () => {
   return (
     <section className=" ">
       {/* Image */}
-      <div className="relative w-full h-[70vh] ">
+      <div className="relative w-full h-[60vh] ">
         <img
           src={pic}
           alt='...'

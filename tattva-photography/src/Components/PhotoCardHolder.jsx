@@ -1,5 +1,6 @@
 import PhotoCard from './PhotoCard';
 import { Link } from 'react-router-dom';
+
 const photos = [
   { src: `https://picsum.photos/300/500?random=${Math.random()}`, title: 'Image 1', id: 1 },
   { src: `https://picsum.photos/300/500?random=${Math.random()}`, title: 'Image 2', id: 2 },
@@ -11,7 +12,7 @@ const photos = [
 
 const PhotoCardHolder = () => {
   return (
-    <div className='grid grid-cols-2 gap-12 p-3  md:grid-cols-2 lg:grid-cols-3 md:p-8 lg:px-[25%] lg:py-10'>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-6 sm:px-8 lg:px-[20%] py-8 max-w-full mx-auto">
       {photos.map((photo, index) => (
         <Link key={index} to={`/watch/${photo.id}`}>
           <PhotoCard key={index} src={photo.src} title={photo.title} />
