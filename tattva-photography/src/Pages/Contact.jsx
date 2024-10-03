@@ -17,7 +17,7 @@ const Contact = () => {
         <h2 className="text-3xl font-bold text-center mb-4 text-white">Contact Us</h2>
         <form
           className="max-w-lg mx-auto"
-          action="https://formspree.io/f/mrbgzzyv"
+          action="https://formspree.io/f/xlderrzj"
           method="POST"
         >
           <input

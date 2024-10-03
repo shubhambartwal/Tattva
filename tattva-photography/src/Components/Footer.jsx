@@ -9,10 +9,10 @@ const Footer = () => {
           <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
             <FaFacebook className="text-white text-xl hover:text-gray-400 transition-colors duration-300" />
           </a>
-          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.instagram.com/tattvaphotography_/" target="_blank" rel="noopener noreferrer">
             <FaInstagram className="text-white text-xl hover:text-gray-400 transition-colors duration-300" />
           </a>
-          <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.youtube.com/@TattvaPhotographyFilms/videos" target="_blank" rel="noopener noreferrer">
             <FaYoutube className="text-white text-xl hover:text-gray-400 transition-colors duration-300" />
           </a>
         </div>
