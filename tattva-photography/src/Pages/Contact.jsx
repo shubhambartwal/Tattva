@@ -1,6 +1,5 @@
-import faq from '../assets/faq.jpg'
 import DiscoverMore from '../Components/DiscoverMore';
-import Collage from '../Components/Collage'
+import Faqs from '../Components/Faq';
 const Contact = () => {
   return (
     <div className="flex-grow min-h-screen pt-20 bg-black">
@@ -34,7 +33,8 @@ const Contact = () => {
           </button>
         </form>
       </div>
-      <Collage collage={faq}/>
+     <Faqs/>
+      <div className='py-4'></div>
       <DiscoverMore />
     </div>
   );

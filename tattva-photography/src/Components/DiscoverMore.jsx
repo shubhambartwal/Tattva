@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 const DiscoverMore = () => {
   return (
     <section className="relative w-full bg-[#1b1b19] py-2 md:py-4 ">
@@ -15,9 +16,11 @@ const DiscoverMore = () => {
           </div>
           {/* Right side: Button */}
           <div className="md:w-1/2 flex items-center justify-center">
-            <button className="bg-black text-white px-6 py-3 rounded-lg shadow-lg hover:bg-white hover:text-[#7d6957] transition-colors duration-300">
+          <Link to="/contact">
+            <button className="bg-black text-white px-6 py-3 rounded-lg shadow-lg hover:bg-white hover:text-[#7d6957] transition-colors duration-300" >
               Reach Out
             </button>
+            </Link>
           </div>
         </div>
       </div>
