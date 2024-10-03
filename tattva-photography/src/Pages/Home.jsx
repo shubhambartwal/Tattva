@@ -1,5 +1,4 @@
 
-import CatchUs from '../Components/Catchus'
 import ChooseUs from '../Components/ChooseUs'
 import Collage from '../Components/Collage'
 import DiscoverMore from '../Components/DiscoverMore'

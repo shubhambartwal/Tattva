@@ -1,5 +1,3 @@
-import React from 'react';
-
 const CatchUs = () => {
     return (
         <section className="relative w-full bg-[#7d6957] py-8 md:py-12">
