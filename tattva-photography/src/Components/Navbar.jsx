@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import logo from '../assets/logo2.png';
+import logo from '../assets/tattvalogo.png';
 import { HiOutlineMenuAlt4, HiOutlineX } from 'react-icons/hi';
 import { FaFacebook, FaInstagram, FaYoutube } from 'react-icons/fa';
 import { useState } from 'react';
@@ -9,7 +9,7 @@ const Navbar = () => {
   const [nav, setNav] = useState(false);
   const location = useLocation();
   const navigate = useNavigate(); // Move useNavigate outside the function
-  
+
   const handleHome = () => {
     navigate('/'); // Navigate to home page
   };
@@ -19,7 +19,7 @@ const Navbar = () => {
   };
 
   // Determine if the current page is Home or Photography page
-  const isTransparent = location.pathname === '/' || location.pathname === '/photography' ||  location.pathname === '/about';
+  const isTransparent = location.pathname === '/' || location.pathname === '/photography' || location.pathname === '/about';
 
   const getLinkClass = (path) => {
     return location.pathname === path
@@ -38,7 +38,7 @@ const Navbar = () => {
         <img
           src={logo}
           alt="Logo" onClick={handleHome}
-          className="h-36 md:h-60 max-w-full object-contain"
+          className="w-20 h-auto"
         />
       </div>
 
@@ -87,13 +87,13 @@ const Navbar = () => {
       <div
         className={
           nav
-            ? 'fixed top-0 left-0 w-full h-screen bg-black px-4 py-7 flex flex-col z-20 transition-all duration-300 ease-in-out'
+            ? 'fixed  top-0 left-0 w-full h-screen bg-black px-4 py-7 flex flex-col justify-between z-20 transition-all duration-300 ease-in-out'
             : 'fixed top-0 left-[-100%] h-screen w-full bg-black px-4 py-7 flex flex-col z-20 transition-all duration-300 ease-in-out'
         }
       >
         <ul
           onClick={handleNav}
-          className="text-white  flex flex-col items-center space-y-4"
+          className="text-white flex flex-col items-center space-y-4 h-[80vh] " // Adjusting height for the content
         >
           <li>
             <Link to="/" className={getLinkClass('/')}>
@@ -125,7 +125,8 @@ const Navbar = () => {
           </li>
         </ul>
 
-        <div className="flex items-center justify-around mt-8">
+        {/* Social Icons */}
+        <div className="flex items-center justify-around mt-8 h-[20vh]">
           <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
             <FaFacebook className="text-white text-xl" />
           </a>
@@ -137,8 +138,9 @@ const Navbar = () => {
           </a>
         </div>
       </div>
-    </div>
-  );
+      </div>
+
+      );
 };
 
-export default Navbar;
+      export default Navbar;

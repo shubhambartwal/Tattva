@@ -2,26 +2,27 @@ import React, { useState, useEffect } from 'react';
 
 const reviews = [
   {
-    name: 'John Doe',
-    review: 'Tattva Photography did an amazing job at our wedding. The photos were stunning, and they captured every special moment.',
+    name: 'Rahul Sharma',
+    review: 'Tattva Photography captured every detail of our wedding beautifully. The candid shots were absolutely stunning!',
   },
   {
-    name: 'Jane Smith',
-    review: 'Highly professional and talented photographers. They made our corporate event memorable with their incredible shots.',
+    name: 'Pooja Verma',
+    review: 'Their team was professional and made our big day even more special. The wedding album is like a dream come true.',
   },
   {
-    name: 'Sam Wilson',
-    review: 'Their creativity and attention to detail are unmatched. The photos of our family reunion were beautiful.',
+    name: 'Amit Mehra',
+    review: 'We had a traditional Punjabi wedding, and Tattva Photography ensured that every vibrant moment was captured perfectly.',
   },
   {
-    name: 'Emily Johnson',
-    review: 'Amazing work! The team at Tattva Photography made our engagement session so much fun and the pictures turned out perfect.',
+    name: 'Sneha Gupta',
+    review: 'The photographers were so creative and friendly. They captured every ritual with such grace. Highly recommended!',
   },
   {
-    name: 'Michael Brown',
-    review: 'The best photography experience I have ever had. Professional, talented, and passionate about their work.',
+    name: 'Rohit Khurana',
+    review: 'Tattva Photography made our wedding look like a royal affair. Their attention to detail is truly commendable.',
   },
 ];
+
 
 const ClientReviewSlideshow = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
